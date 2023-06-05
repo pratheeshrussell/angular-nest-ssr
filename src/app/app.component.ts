@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     // The following will be called once in server
     // and once in browser
-    console.log('init called')
+    console.log('This will print out in server as well as the browser')
   }
   
 }

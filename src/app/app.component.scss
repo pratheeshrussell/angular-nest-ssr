@@ -1,0 +1,28 @@
+nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 20px;
+  
+    a {
+      text-decoration: none;
+      color: #333;
+      margin-right: 10px;
+      font-weight: bold;
+  
+      &:hover {
+        color: #666;
+      }
+  
+      &.active {
+        color: blue;
+      }
+    }
+  }
+  
+  // Styles for the <router-outlet> element
+  .router-container {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
