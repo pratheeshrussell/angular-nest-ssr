@@ -1,9 +1,11 @@
 # Angular SSR with NestJS
 
-This is a base setup with routing between components. There is also a demo for setting up transferState.
+In this branch we have setup a few endpoints on the server and interact with it
 
-# Branches
-## main
-## 1-Routing
-## 2-Interacting-With-NestJS
+# Interesting code
+1. fetch-data.service.ts  
+* here we have 2 sets of implementations of getData method. The first one is to demo 'TransferHttpCacheModule'. (Uncomment the imports in app module)  
+* the one shows how to use 'TransferState'  
+
+
 

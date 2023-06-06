@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MetaTagServiceService } from 'src/app/services/meta-tag-service.service';
 
 
@@ -8,11 +9,19 @@ import { MetaTagServiceService } from 'src/app/services/meta-tag-service.service
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-
-  constructor(private metaService:MetaTagServiceService){}
-  ngOnInit(): void {
+  welcomeMessage = '';
+  constructor(private metaService:MetaTagServiceService,private actRoute: ActivatedRoute){}
+  ngOnInit() {
     this.metaService.setMetaTag('og:title', 'Home page');
     this.metaService.setMetaTag('og:description', this.metaService.generateRandomText(10));
+    this.getWelcomeMessage();
+  }
+
+  getWelcomeMessage(){
+    this.actRoute.data.subscribe(data => {
+      this.welcomeMessage = data['welcomeData'].message;
+    })
+
   }
   
 }
