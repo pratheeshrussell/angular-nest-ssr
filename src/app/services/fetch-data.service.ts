@@ -14,14 +14,15 @@ export class FetchDataService {
     @Inject(PLATFORM_ID) private platformId: Object,
    @Optional() @Inject('serverUrl') protected serverUrl: string) { }
 
-   getDataOld(): Observable<any> {
+   getData(): Observable<any> {
     // link must be of form http://localhost 
     // to use TransferHttpCacheModule
     let baseUrl = 'http://localhost:4200'; // this.serverUrl ? this.serverUrl : '';
     return this.http.get<any>(`${baseUrl}/api/hello-world`)
    }
 
-  getData(): Observable<any> {
+  getDataOld(): Observable<any> {
+    // Implementation with Transferstate
     if (this.transferState.hasKey(this.SERVER_DATA_KEY)) {
       console.log('value already exists in transferState')
       const storedData = this.transferState.get<any>(this.SERVER_DATA_KEY, null);   
