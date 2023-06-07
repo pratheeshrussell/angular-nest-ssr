@@ -11,12 +11,6 @@ const routes: Routes = [
   },{
     path:'about',
     title: () => {
-      // we can't directly use DI
-      const title = inject(Title);
-      const currentTitle = title.getTitle();
-      if(currentTitle.toLowerCase().startsWith('about')){
-        return currentTitle;
-      }
       return 'About Page'
     },
     loadComponent: () => 
