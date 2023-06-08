@@ -19,6 +19,11 @@ const routes: Routes = [
     loadComponent: () => 
     import('./pages/about/about.component').then(mod => mod.AboutComponent)
   },{
+    path:'',
+    pathMatch: 'full',
+    redirectTo: '/home'
+  },
+  {
     path:'**',
     title: 'Not Found',
     component:NotFoundComponent
