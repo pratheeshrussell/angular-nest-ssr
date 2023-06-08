@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { Title } from '@angular/platform-browser';
 import { DataFetcherResolver } from './resolvers/data-fetcher.resolver';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
     import('./pages/about/about.component').then(mod => mod.AboutComponent)
   },{
     path:'**',
-    redirectTo:'/home'
+    title: 'Not Found',
+    component:NotFoundComponent
   }
 
 ];
